@@ -1,0 +1,13 @@
+.user-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #4caf50; /* Default color for user icon */
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-transform: uppercase;
+  }

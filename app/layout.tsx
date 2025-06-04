@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import ContactModal from "./component/modal/ContactModal";
+import LoginModal from "./component/modal/LoginModal";
+import RegisterModal from "./component/modal/RegisterModal";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,6 +33,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <ContactModal />
+        <LoginModal />
+        <RegisterModal />
       </body>
     </html>
   );

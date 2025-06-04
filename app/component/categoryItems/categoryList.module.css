@@ -1,0 +1,7 @@
+.gridItem {
+  display: grid;
+  gap: 2.25rem; /* or gap-9 */
+  grid-auto-rows: auto; 
+  
+  
+}

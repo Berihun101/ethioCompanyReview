@@ -1,0 +1,8 @@
+.scrollContainer {
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .scrollContainer::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
