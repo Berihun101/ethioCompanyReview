@@ -29,7 +29,7 @@ const RecentReviewDetail: React.FC<RecentReviewProps> = async ({ recentReview })
     <div className="rounded-xl hover:border-primary border border-3 p-3">
       <div className="flex space-x-3">
         <div className="object-cover rounded-full overflow-hidden">
-          <Image   src={`http://localhost:8000/${user.avatar}`} alt="avatar image" width={80} height={80} />
+          <Image   src={user.avatar} alt="avatar image" width={80} height={80} />
         </div>
         <div>
           <h3>{user.username}</h3>
@@ -49,7 +49,7 @@ const RecentReviewDetail: React.FC<RecentReviewProps> = async ({ recentReview })
       <div className="flex space-x-4">
         <div className="object-cover rounded-full overflow-hidden">
           <Image
-            src={`http://localhost:8000${recentReview.company.logo}`}
+            src={recentReview.company.logo}
             alt="1"
             width={80}
             height={80}

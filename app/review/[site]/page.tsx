@@ -37,12 +37,12 @@ const CompanyReviewPage = async ({ params, searchParams }: { params: { name: str
   try {
     const userId = await getUserId();
     if (userId) {
-      console.log("hello")
+      console.log("still there",userId)
       userDetail = await apiService.get(`auth/${userId}`);
       user_review = await apiService.get(`review/rating/${company.id}/`);
     }
   } catch (error) {
-    console.error("Failed to fetch user details:", error);
+    console.log("You are not logged in");
   }
 
   return (

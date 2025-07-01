@@ -73,7 +73,7 @@ const CategoryMenu = () => {
 
           {categories.map((category, index) => (
              <div onClick={() => {router.push(`categories/${category.name}`)}} key={index} className="flex flex-col space-y-2 justify-center items-center flex-none cursor-pointer ">
-             <Image className="object-cover h-full" src={`http://localhost:8000${category.icon}`} alt="contact" width={30} height={30} />
+             <Image className="object-cover h-full" src={category.icon} alt="contact" width={30} height={30} />
 
              <p className='text-center hover:underline'>{category.name}</p>
            </div>

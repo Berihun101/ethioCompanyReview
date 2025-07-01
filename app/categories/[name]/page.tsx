@@ -90,7 +90,7 @@ const CategoryPage =  () => {
           setUserDetail(response);
         }
       } catch (error) {
-        console.error("Failed to fetch user details:", error);
+        console.log("You are not logged in");
       }
     };
     fetchUserDetails();

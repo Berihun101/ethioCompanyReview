@@ -36,15 +36,30 @@ export async function handleLogin(userId: string, accessToken:string, refreshTok
     })
 }
 
-export async  function resetAuthCookies(){
-    const cookieStore = await cookies()
-    console.log('sdfsdf')
-    cookieStore.set('session_userid', '')
-    cookieStore.set('session_user_detail', '')
-    cookieStore.set('session_access_token', '')
-    cookieStore.set('session_refresh_token', '')
+export async function resetAuthCookies() {
+    const cookieStore = await cookies();
+    
+    // Expire all cookies by setting maxAge: 0
+    cookieStore.set('session_userid', '', {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 0,  // ← Immediately expires
+        path: '/',
+    });
 
+    cookieStore.set('session_access_token', '', {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 0,
+        path: '/',
+    });
 
+    cookieStore.set('session_refresh_token', '', {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',  // Fixed typo
+        maxAge: 0,
+        path: '/',
+    });
 }
 
 export async function getUserId(){
