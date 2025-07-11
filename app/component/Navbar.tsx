@@ -19,20 +19,20 @@ import { MoveRight } from "lucide-react";
 import UserProfile from "./navbar/UserProfile";
 import { userDetailType } from "./writeReviews/WriteReviews";
 
-interface NavbarProps {
-  userDetail: userDetailType | null;
-}
 
 
 
-const Navbar:React.FC<NavbarProps> = ({userDetail}) => {
+
+const Navbar = async () => {
   
+  // Fetch user details if not provided
+ 
+    const userId = await getUserId();
+    let userDetail: userDetailType | null = null;
+    if (userId) {
+      userDetail = await apiService.get(`auth/${userId}`);
+    }
 
-
-   
-     
-   
-  
   return (
     <nav className="flex bg-primary px-4 2xl:px-96 xl:px-32 lg:px-12 justify-between">
       <div className="p-6">

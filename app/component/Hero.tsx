@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import apiService from "@/app/services/apiServices";
-import { companyType } from "../categories/[name]/page";
+import { companyType } from "../(main)/categories/[name]/page";
 import Link from "next/link";
 
 const Hero = () => {

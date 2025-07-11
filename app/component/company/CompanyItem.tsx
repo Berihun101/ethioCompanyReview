@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import useContactModal from "@/app/hooks/useContactModal";
-import { companyType } from "@/app/categories/[name]/page";
+import { companyType } from "@/app/(main)/categories/[name]/page";
 import { useRouter } from "next/navigation";
 import apiService from "@/app/services/apiServices";
 import { useState,useEffect } from "react";
@@ -47,7 +47,7 @@ const CompanyItem:React.FC<CompanyItemProps> = ({company}) => {
         <div onClick={gotoCompanyReview} className="border hover:border-primary hover:border-3 hover:shadow-2xl rounded-xl  cursor-pointer ">
          <div className="flex  p-4 space-x-6">
             <div className="rounded-xl  relative h-[100px]  overflow-hidden">
-              <Image className="object-cover h-full" src={`http://localhost:8000${company.logo}`} alt="contact" width={100} height={100} />
+              <Image className="object-cover h-full" src={company.logo} alt="contact" width={100} height={100} />
               
             </div>
             <div className="flex-1">

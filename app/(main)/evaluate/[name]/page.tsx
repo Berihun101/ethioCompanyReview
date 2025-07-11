@@ -23,7 +23,7 @@ const EvaluatePage = async ({ params, searchParams }: { params: { name: string }
 
     return (
         <>
-            <Navbar userDetail={userDetail} />
+            
             <ReviewComponent userId={userId} userDetail={userDetail} company={company} />
         </>
     );

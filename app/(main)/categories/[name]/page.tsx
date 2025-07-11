@@ -39,7 +39,7 @@ const CategoryPage =  () => {
   const [companies, setCompanies] = useState<companyType[]>([]);
   const [filter3Plus, setFilter3Plus] = useState<boolean>(false); // Track the filter state
   const { name } = useParams();
-  const [userDetail, setUserDetail] = useState<userDetailType | null>(null);
+  
 
   const company_count = companies.length;
   const company_category = companies[0]?.category.name;
@@ -81,24 +81,11 @@ const CategoryPage =  () => {
   // User details
 
 
-  useEffect(() => {
-    const fetchUserDetails = async () => {
-      try {
-        const userId = await getUserId();
-        if (userId) {
-          const response = await apiService.get(`auth/${userId}`);
-          setUserDetail(response);
-        }
-      } catch (error) {
-        console.log("You are not logged in");
-      }
-    };
-    fetchUserDetails();
-  }, []);
+  
 
   return (
     <div>
-      <Navbar userDetail={userDetail}  />
+      
 
       <div className="p-4 mt-6 text-center">
         <h1 className="text-5xl font-bold">Here are the best rated in Ethiopa</h1>

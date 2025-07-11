@@ -61,6 +61,7 @@ const MyProfile = () => {
         try {
           const response = await apiService.get(`auth/${userId}/`);
             setUserDetails(response);
+            console.log("User details fetched:", response);
         
         } catch (error) {
           console.error("Error fetching user details:", error);
@@ -136,7 +137,7 @@ const MyProfile = () => {
           <Image
             fill
             className="rounded-full object-cover"
-            src={tempImage || `http://localhost:8000/${userDetails?.avatar}`}
+            src={userDetails?.avatar_url || "/default-avatar.png"}
             alt="Profile"
     
           />

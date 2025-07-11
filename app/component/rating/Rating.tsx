@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { companyType } from "@/app/categories/[name]/page";
+import { companyType } from "@/app/(main)/categories/[name]/page";
 import apiService from "@/app/services/apiServices";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { getUserId } from "@/app/lib/actions";

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import apiService from '../services/apiServices';
 import CompanyDetail from './CompanyDetail';
-import { companyType } from '../categories/[name]/page';
+import { companyType } from '../(main)/categories/[name]/page';
 import Link from 'next/link';
 
 const FeatureCompany = async () => {

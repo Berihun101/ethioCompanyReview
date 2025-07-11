@@ -6,7 +6,7 @@ import apiService from "@/app/services/apiServices";
 import { getUserId } from "@/app/lib/actions";
 import { userDetailType } from "@/app/component/writeReviews/WriteReviews";
 import StarRating from "@/app/component/rating/StarRating";
-import { companyType } from "@/app/categories/[name]/page";
+import { companyType } from "@/app/(main)/categories/[name]/page";
 
 
 export type userReviewType = {
@@ -47,14 +47,14 @@ const CompanyReviewPage = async ({ params, searchParams }: { params: { name: str
 
   return (
     <>
-      <Navbar userDetail={userDetail}  />
+      
       <div className="2xl:px-72 xl:px-30 lg:px-12 md:px-6 px-4 mt-6 py-3">
         <div className="grid grid-cols-2 space-y-4 lg:grid-cols-3">
           <div className="flex col-span-2">
             <div className="rounded-xl relative h-[200px] overflow-hidden">
               <Image
                 className="object-cover h-full"
-                src={`http://localhost:8000${company.logo}`}
+                src={company.logo}
                 alt="Company Logo"
                 width={200}
                 height={100}

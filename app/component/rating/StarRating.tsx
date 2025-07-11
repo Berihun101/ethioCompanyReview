@@ -1,4 +1,4 @@
-import { ratingType } from "@/app/review/[site]/page";
+import { ratingType } from "@/app/(main)/review/[site]/page";
 
 interface starRatingProps {
   rating:ratingType

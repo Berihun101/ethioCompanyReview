@@ -12,14 +12,12 @@ export type categoryType = {
     id: number;
   name: string;
   sector: string;
-  icon: string;
+  icon_url: string;
 };
 
-interface CategoryListProps {
-  userDetail: userDetailType | null;
-}
 
-const CategoryList: React.FC<CategoryListProps> = ({ userDetail }) => {
+
+const CategoryList = () => {
   const [categories, setCategories] = useState<categoryType[]>([]);
   const [searchedCategories, setSearchedCategories] = useState<categoryType[]>([]);
   const [searchText, setSearchText] = useState("");
@@ -88,7 +86,7 @@ const CategoryList: React.FC<CategoryListProps> = ({ userDetail }) => {
 
   return (
     <>
-      <Navbar userDetail={userDetail}   />
+      
 
       <div className="px-12 py-24 text-center bg-primary-300 w-full">
         <h1 className="text-3xl font-bold">What are you looking for?</h1>

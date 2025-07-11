@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { userReviewType } from "../review/[site]/page";
+import { userReviewType } from "../(main)/review/[site]/page";
 import apiService from "../services/apiServices";
 import { userDetailType } from "./writeReviews/WriteReviews";
 import Link from "next/link";
@@ -29,7 +29,7 @@ const RecentReviewDetail: React.FC<RecentReviewProps> = async ({ recentReview })
     <div className="rounded-xl hover:border-primary border border-3 p-3">
       <div className="flex space-x-3">
         <div className="object-cover rounded-full overflow-hidden">
-          <Image   src={user.avatar} alt="avatar image" width={80} height={80} />
+          <Image   src={user.avatar_url} alt="avatar image" width={80} height={80} />
         </div>
         <div>
           <h3>{user.username}</h3>

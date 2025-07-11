@@ -13,7 +13,7 @@ const ReviewerComments:React.FC<reviewerCommentProps> = ({reviewerComment}) => {
         {/* Image Container */}
         <div className="relative w-36 h-36 lg:w-24 lg:h-24 flex-shrink-0">
           <Image
-            src={`http://localhost:8000${reviewerComment.logo}`}
+            src={reviewerComment.logo}
             alt={reviewerComment.company}
             fill
             className="object-cover rounded-xl"

@@ -8,11 +8,12 @@ interface CategoryItemProps {
 }
 
 const CategoryItem: React.FC<CategoryItemProps> =  ({ sector, categories }) => {
-  const category_icon = categories[0].icon;
+  const category_icon = categories[0].icon_url;
+  console.log(category_icon)
   return (
     <div className="border border-primary rounded-xl">
       <div className="bg-primary-100 rounded-xl flex flex-col items-center text-center w-full p-4">
-        <Image className="mb-3" src={`http://localhost:8000${category_icon}`} alt="icon" width={60} height={60} />
+        <Image className="mb-3" src={category_icon} alt="icon" width={60} height={60} />
         <p className="font-bold text-xl">{sector}</p>
       </div>
       <div className="p-3 flex flex-col space-y-4">

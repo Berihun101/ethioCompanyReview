@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from 'next/image';
-import { companyType } from "@/app/categories/[name]/page";
+import { companyType } from "@/app/(main)/categories/[name]/page";
 
 interface AboutCompanyProps {
     company: companyType;
@@ -13,7 +13,7 @@ const AboutCompany:React.FC<AboutCompanyProps> = ({company}) => {
                  <p className="mt-2">About the Company</p>
 
                  <div className="object-cover relative aspect-square overflow-hidden w-48 h-48">
-                    <Image src={`http://localhost:8000${company.logo}`} alt="1" fill className="object-cover w-full h-full" />
+                    <Image src={company.logo} alt="1" fill className="object-cover w-full h-full" />
 
                  </div>
 

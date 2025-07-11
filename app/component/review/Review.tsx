@@ -3,8 +3,8 @@ import Link from 'next/link';
 import FilterBoard from '../FilterBoard';
 import UserReview from './UserReview';
 import AboutCompany from '../company/AboutCompany';
-import { companyType } from '@/app/categories/[name]/page';
-import { userReviewType } from '@/app/review/[site]/page';
+import { companyType } from '@/app/(main)/categories/[name]/page';
+import { userReviewType } from '@/app/(main)/review/[site]/page';
 import apiService from '@/app/services/apiServices';
 import { getUserId } from '@/app/lib/actions';
 import RelatedCompany from '../filterItem/RelatedCompany';
@@ -34,6 +34,7 @@ const Review: React.FC<ReviewProps> = async ({ company, userRating, review_count
   let user: userDetailType | null = null;
   if(userId){
      user = await apiService.get(`auth/${userId}`);
+     console.log('avatar', user?.avatar_url);
   }
   
   
@@ -47,7 +48,7 @@ const Review: React.FC<ReviewProps> = async ({ company, userRating, review_count
             <div className="flex space-x-3 items-center">
               <div className="w-[30px] relative h-[30px] rounded-full overflow-hidden">
                 {user && (
-                  <Image src={`http://localhost:8000/${user.avatar}`} alt="1" fill className="object-cover w-full h-full" />
+                  <Image src={user.avatar_url} alt="1" fill className="object-cover w-full h-full" />
                 )}
               </div>
               

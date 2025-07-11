@@ -52,7 +52,7 @@ const UserReview: React.FC<UserReviewProps> = async ({ comment, companyId }) => 
     <div className="rounded-xl mt-6 border border-primary bg-white px-4 py-3">
       <div className="flex mb-3 space-x-3 items-center">
         <div className="w-[30px] relative h-[30px] rounded-full overflow-hidden">
-          <Image src={`http://localhost:8000/${reviewerDetail.avatar}`} alt="Reviewer Avatar" fill className="object-cover w-full h-full" />
+          <Image src={reviewerDetail.avatar} alt="Reviewer Avatar" fill className="object-cover w-full h-full" />
         </div>
         <div>
           <p>{reviewerDetail.reviewer}</p>

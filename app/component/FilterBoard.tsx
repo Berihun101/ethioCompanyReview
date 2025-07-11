@@ -1,4 +1,4 @@
-import { companyType } from "../categories/[name]/page";
+import { companyType } from "../(main)/categories/[name]/page";
 import apiService from "../services/apiServices";
 
 interface FilterBoardProps {

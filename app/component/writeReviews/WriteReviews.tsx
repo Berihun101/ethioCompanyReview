@@ -4,7 +4,7 @@ import ReviewNavbar from "../navbar/ReviewNavbar";
 import { getUserId } from "@/app/lib/actions";
 import apiService from "@/app/services/apiServices";
 import { use, useEffect, useState } from "react";
-import { companyType } from "@/app/categories/[name]/page";
+import { companyType } from "@/app/(main)/categories/[name]/page";
 import Link from "next/link";
 import { reviewCommentType } from "../review/Review";
 import Image from "next/image";
@@ -16,7 +16,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 export type userDetailType = {
     id:number,
     username:string,
-    avatar:string,
+    avatar_url:string,
 }
 
 export type ReviewerComment = {

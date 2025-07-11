@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import RecentReviewDetail from './RecentReviewDetail';
 import apiService from '../services/apiServices';
-import { userReviewType } from '../review/[site]/page';
+import { userReviewType } from '../(main)/review/[site]/page';
 
 
 
