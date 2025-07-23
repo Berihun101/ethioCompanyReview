@@ -1,12 +1,21 @@
-import Navbar from "@/app/component/Navbar";
-import Rating from "@/app/component/rating/Rating";
-import Image from "next/image";
 import apiService from "@/app/services/apiServices";
 import { getUserId } from "@/app/lib/actions";
 import ReviewComponent from "@/app/component/ReviewComponent/ReviewComponent";
 
-const EvaluatePage = async ({ params, searchParams }: { params: { name: string }; searchParams: { id: string } }) => {
-    const id = searchParams.id; // Extract ID from query parameters
+type PageParams = Promise<{ name: string }>;
+type PageSearchParams = Promise<{ id: string }>;
+
+interface PageProps {
+  params: PageParams;
+  searchParams: PageSearchParams;
+}
+
+const EvaluatePage = async ({ params, searchParams }: PageProps) => {
+    // Await the promises to get the actual values
+    const awaitedParams = await params;
+    const awaitedSearchParams = await searchParams;
+    
+    const id = awaitedSearchParams.id;
     const userId = await getUserId();
 
     let userDetail = null;
@@ -23,7 +32,6 @@ const EvaluatePage = async ({ params, searchParams }: { params: { name: string }
 
     return (
         <>
-            
             <ReviewComponent userId={userId} userDetail={userDetail} company={company} />
         </>
     );

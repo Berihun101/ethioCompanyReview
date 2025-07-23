@@ -30,8 +30,15 @@ const ReviewerComments:React.FC<reviewerCommentProps> = ({reviewerComment}) => {
            
           </div>
         </div>
+        
       </div>
+      <div className="mt-4">
+        <p className="text-sm text-gray-600">{reviewerComment.body}</p>
+        <div className="mt-2">
+          <p className="text-xs text-gray-400">Posted on {new Date(reviewerComment.created_at).toLocaleDateString()}</p>
+          </div>
         </div>
+      </div>
         
         
     )

@@ -5,7 +5,7 @@ import { companyType } from "@/app/(main)/categories/[name]/page";
 import { useRouter } from "next/navigation";
 import apiService from "@/app/services/apiServices";
 import { useState,useEffect } from "react";
-import { ratingType } from "@/app/review/[site]/page";
+import { ratingType } from "@/app/(main)/review/[site]/page";
 import RenderStars from "../rating/RenderStars";
 
 interface CompanyItemProps {

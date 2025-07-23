@@ -8,6 +8,13 @@ import { userDetailType } from "@/app/component/writeReviews/WriteReviews";
 import StarRating from "@/app/component/rating/StarRating";
 import { companyType } from "@/app/(main)/categories/[name]/page";
 
+type pageParams = Promise<{ name: string }>;
+type pageSearchParams = Promise<{ id: string }>;
+
+interface PageProps {
+  params: pageParams;
+  searchParams: pageSearchParams;
+}
 
 export type userReviewType = {
   id:number,
@@ -21,9 +28,12 @@ export type ratingType = {
 }
 
 
-const CompanyReviewPage = async ({ params, searchParams }: { params: { name: string }; searchParams: { id: string } }) => {
-  const { name } = params;
-  const { id } = searchParams;
+const CompanyReviewPage = async ({ params, searchParams }: PageProps) => {
+  // Await the promises to get the actual values
+  const awaitedParams = await params;
+  const awaitedSearchParams = await searchParams;
+  const { name } = awaitedParams;
+  const { id } = awaitedSearchParams;
 
   const company = await apiService.get(`company/company_detail/${id}/`);
   const rating = await apiService.get(`review/average_rating/${company.id}/`);

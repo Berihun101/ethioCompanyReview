@@ -4,6 +4,7 @@ import "./globals.css";
 import ContactModal from "./component/modal/ContactModal";
 import LoginModal from "./component/modal/LoginModal";
 import RegisterModal from "./component/modal/RegisterModal";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
 const geistSans = localFont({
@@ -28,6 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -38,5 +40,6 @@ export default function RootLayout({
         <RegisterModal />
       </body>
     </html>
+    </GoogleOAuthProvider>
   );
 }

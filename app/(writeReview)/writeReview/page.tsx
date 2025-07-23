@@ -1,4 +1,4 @@
-import WriteReviews from "../component/writeReviews/WriteReviews";
+import WriteReviews from "@/app/component/writeReviews/WriteReviews";
 
 const WriteReviewPage = () => {
     return (

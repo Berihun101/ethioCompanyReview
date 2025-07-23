@@ -19,8 +19,8 @@ const RecentReviewDetail: React.FC<RecentReviewProps> = async ({ recentReview })
     `review/reviewer_rating/${recentReview.reviewer}/${recentReview.company.id}/`
   );
 
-  console.log('userrating',userRating);
-  console.log('user', user);
+  
+ 
 
   // Function to render stars based on rating value
  
